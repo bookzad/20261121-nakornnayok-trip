@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ทริปนครนายก 21–22 พ.ย. 69</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1F3A33">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="นครนายก">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#E8EDE7;      /* river stone */
+  --paper:#F6F8F4;
+  --forest:#1F3A33;     /* forest canopy */
+  --jade:#2E7D74;       /* rapids */
+  --brick:#8F4430;      /* laterite of the old ubosot */
+  --rice:#B8912C;       /* rice field */
+  --ink:#17221F;
+  --muted:#56645F;
+  --line:#C9D3CC;
+  --card:#FFFFFF;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --stone:#121B18; --paper:#16211E; --forest:#0E1A17; --jade:#5DB3A7;
+    --brick:#D07C62; --rice:#D9B456; --ink:#E6ECE8; --muted:#9AA9A3;
+    --line:#2C3A36; --card:#1C2925;
+    color-scheme: dark;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;background:var(--stone);color:var(--ink);
+  font-family:"Anuphan","Noto Sans Thai",system-ui,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rice);outline-offset:3px;border-radius:4px}
+img{max-width:100%;display:block}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:var(--forest);color:#EEF3EF;
+  padding:40px 22px 30px;position:relative;overflow:hidden;
+}
+.hero-inner{max-width:640px;margin:0 auto}
+.hero .dates{font-size:15px;opacity:.8;margin:0 0 6px}
+.hero h1{
+  font-family:"Chonburi",Georgia,serif;font-weight:400;
+  font-size:clamp(52px,16vw,88px);line-height:1;margin:0 0 4px;letter-spacing:-.01em;
+}
+.hero .sub{margin:0 0 26px;font-size:16px;opacity:.85}
+.river{width:100%;height:auto;overflow:visible}
+.river .path{fill:none;stroke:#5DB3A7;stroke-width:3;stroke-linecap:round;
+  stroke-dasharray:900;stroke-dashoffset:900;animation:flow 2.2s ease-out .2s forwards}
+.river .dot{fill:#EEF3EF}
+.river .home{fill:#D9B456}
+.river text{fill:#EEF3EF;font-family:"Anuphan",sans-serif;font-size:11.5px}
+@keyframes flow{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.river .path{animation:none;stroke-dashoffset:0}}
+
+main{max-width:640px;margin:0 auto;padding:0 16px 40px}
+
+/* ---------- Stay card ---------- */
+.stay{
+  margin:-6px 0 0;background:var(--card);border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);position:relative;top:-0px;
+}
+.stay-wrap{padding-top:22px}
+.stay img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.stay .body{padding:14px 16px 16px}
+.stay h2{font-family:"Chonburi",Georgia,serif;font-weight:400;font-size:22px;margin:0 0 2px}
+.stay p{margin:0;color:var(--muted);font-size:15px}
+.stay .facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--stone);color:var(--ink);white-space:nowrap}
+.chip.warn{background:color-mix(in srgb,var(--brick) 15%,transparent);color:var(--brick)}
+
+/* ---------- Day ---------- */
+.day{margin-top:44px}
+.day-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:6px}
+.day-num{
+  font-family:"Chonburi",Georgia,serif;font-size:76px;line-height:.8;color:var(--jade);
+}
+.day-head h2{margin:0;font-size:21px;font-weight:600;line-height:1.3}
+.day-head .theme{margin:0;color:var(--muted);font-size:15px}
+.route-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin:16px 0 22px;padding:13px 16px;border-radius:12px;
+  background:var(--jade);color:#fff;text-decoration:none;font-weight:600;font-size:16px;
+}
+.route-btn svg{width:18px;height:18px}
+
+/* ---------- Timeline ---------- */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{
+  content:"";position:absolute;left:27px;top:6px;bottom:6px;width:2px;
+  background:repeating-linear-gradient(to bottom,var(--jade) 0 8px,transparent 8px 13px);
+  opacity:.55;
+}
+.stop{position:relative;padding-left:64px;margin-bottom:20px}
+.time{
+  position:absolute;left:0;top:2px;width:56px;text-align:center;
+  font-size:13px;font-weight:600;background:var(--paper);color:var(--ink);
+  border:1.5px solid var(--jade);border-radius:8px;padding:2px 0;
+}
+.time.none{border-style:dashed;color:var(--muted);font-weight:500}
+.stop.minor .name{font-weight:500;color:var(--muted)}
+.stop.minor{margin-bottom:14px}
+.name{font-size:18px;font-weight:600;line-height:1.35;margin:1px 0 4px;display:inline-block}
+a.name{text-decoration:none;border-bottom:1.5px solid color-mix(in srgb,var(--jade) 55%,transparent)}
+a.name:hover{color:var(--jade)}
+.pin{display:inline-block;width:14px;height:14px;vertical-align:-1px;margin-left:4px;color:var(--jade)}
+.note{margin:0 0 8px;color:var(--muted);font-size:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--line)}
+.card .cap{font-size:11.5px;color:var(--muted);padding:6px 10px}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}
+.stop.home .time{background:var(--rice);border-color:var(--rice);color:#1b1608}
+
+.cost{font-size:13px;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--rice) 22%,transparent);color:var(--ink);font-weight:600;white-space:nowrap}
+.hero .budget{display:inline-flex;gap:10px;align-items:baseline;margin:0 0 22px;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.08)}
+.hero .budget b{font-family:"Chonburi",Georgia,serif;font-weight:400;font-size:24px;color:#D9B456}
+.rooms{margin:12px 0 0;border-top:1px solid var(--line)}
+.room{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.room a{font-weight:600}
+.room small{color:var(--muted);font-size:13px;margin-left:4px}
+.room .amt{font-variant-numeric:tabular-nums;white-space:nowrap}
+.room.total{font-weight:600;border-bottom:none}
+.deposit{display:flex;gap:8px;margin-top:6px}
+.deposit div{flex:1;padding:8px 10px;border-radius:10px;background:var(--stone);font-size:13px;color:var(--muted)}
+.deposit b{display:block;font-size:17px;color:var(--ink);font-variant-numeric:tabular-nums}
+.deposit .due b{color:var(--brick)}
+.opts-label{font-size:14px;color:var(--muted);margin:10px 0 0}
+.opts{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 6px;margin:0 -16px 0 0}
+.opt{flex:0 0 74%;max-width:260px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.opt img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--line)}
+.opt .b{padding:9px 11px 11px}
+.opt a.n{font-weight:600;text-decoration:none;border-bottom:1.5px solid color-mix(in srgb,var(--jade) 55%,transparent);line-height:1.35}
+.opt p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.opt .cap{font-size:11px;color:var(--muted);margin-top:6px}
+.budget-sec{margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 6px}
+.budget-sec h2{font-family:"Chonburi",Georgia,serif;font-weight:400;font-size:22px;margin:0 0 4px}
+.budget-sec .room:last-child{border-bottom:none}
+footer{max-width:640px;margin:0 auto;padding:10px 22px 40px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="dates">เสาร์ 21 – อาทิตย์ 22 พฤศจิกายน 2569</p>
+    <h1>นครนายก</h1>
+    <p class="sub" style="margin-bottom:14px">ล่องแก่ง ขับ ATV นอนมีนาวิลล่า แวะสัตว์ป่า แล้วปิดท้ายที่โบสถ์เก่ากลางทุ่ง</p>
+    <p class="budget"><span>งบรวมโดยประมาณ</span><b>17,460 ฿</b></p>
+
+    <svg class="river" viewBox="0 0 360 150" role="img" aria-label="เส้นทาง: บ้าน, ล่องแก่ง + ATV, มีนาวิลล่า, ศูนย์ช่วยเหลือสัตว์ป่า, ครัวสองยาง, วัดป่ากระทุ่ม, บ้าน">
+      <path class="path" d="M14 30 C70 30 70 30 92 30 S150 60 170 40 S240 10 262 30 S330 90 300 110 S200 130 168 118 S80 108 50 122 S14 130 14 130"/>
+      <circle class="home" cx="14" cy="30" r="6"/>
+      <text x="4" y="16">บ้าน</text>
+      <circle class="dot" cx="92" cy="30" r="5"/>
+      <text x="72" y="16">ล่องแก่ง</text>
+      <circle class="dot" cx="170" cy="40" r="5"/>
+      <text x="140" y="64">มีนาวิลล่า</text>
+      <circle class="dot" cx="262" cy="30" r="5"/>
+      <text x="236" y="16">สัตว์ป่า</text>
+      <circle class="dot" cx="300" cy="110" r="5"/>
+      <text x="258" y="140">ครัวสองยาง</text>
+      <circle class="dot" cx="168" cy="118" r="5"/>
+      <text x="128" y="140">วัดป่ากระทุ่ม</text>
+      <circle class="home" cx="14" cy="130" r="6"/>
+      <text x="4" y="148">บ้าน</text>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <div class="stay-wrap">
+    <article class="stay">
+      <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeA4nFQF_zMHlEAPWnLLhAbDzbksV60QriNNWdZHx_3vSCb6TDG3eyRACOTY0T0yXIWipkkCFpr3lo5UVsmbdYo4Fxt8TiGsdnlmmoC57do9E6OVOAQi2z7D1Kkxrae3-frzUMvZw=s4800-w800-h600" alt="มีนาวิลล่า" loading="lazy">
+      <div class="body">
+        <h2>ที่พัก 1 คืน: มีนาวิลล่า</h2>
+        <p>รีสอร์ตมีสวนน้ำในตัว ทานมื้อเย็นที่ร้านอาหารของรีสอร์ต</p>
+        <div class="rooms">
+          <div class="room"><span><a href="https://www.meenavilla.com/room/villa-1/ma-nee-1/" target="_blank" rel="noopener">ห้องมานี 1</a><small>4 คน</small></span><span class="amt">4,820 ฿</span></div>
+          <div class="room"><span><a href="https://www.meenavilla.com/room/villa-1/ma-nee-2/" target="_blank" rel="noopener">ห้องมานี 2</a><small>2 คน</small></span><span class="amt">3,640 ฿</span></div>
+          <div class="room"><span>เตียงเสริม</span><span class="amt">800 ฿</span></div>
+          <div class="room total"><span>รวมค่าที่พัก</span><span class="amt">9,260 ฿</span></div>
+        </div>
+        <div class="deposit">
+          <div>มัดจำแล้ว<b>4,630 ฿</b></div>
+          <div class="due">จ่ายเพิ่มวันเช็กอิน<b>4,630 ฿</b></div>
+        </div>
+        <div class="facts">
+          <span class="chip">★ 4.5 (1,350 รีวิว)</span>
+          <a class="chip" href="tel:+66909380470">☎ 090 938 0470</a>
+          <a class="chip" href="https://www.meenavilla.com/" target="_blank" rel="noopener">เว็บไซต์</a>
+        </div>
+        <p class="cap" style="font-size:11.5px;margin-top:8px">ภาพ: Google Maps · Meena Villa</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ================= DAY 1 ================= -->
+  <section class="day" id="day1">
+    <div class="day-head">
+      <div class="day-num">1</div>
+      <div>
+        <h2>เสาร์ 21 พ.ย.</h2>
+        <p class="theme">สายน้ำ ลุยดิน แล้วพักผ่อน</p>
+      </div>
+    </div>
+    <a class="route-btn" href="https://maps.app.goo.gl/bVcrYQkLMGzKCuhFA" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-6-3V4l6 3 6-3 6 3v13l-6-3-6 3zM9 7v13M15 4v13"/></svg>
+      เปิดเส้นทางวันที่ 1 ใน Google Maps
+    </a>
+
+    <ol class="tl">
+      <li class="stop minor home">
+        <span class="time">6:30</span>
+        <span class="name">ออกจากบ้าน</span>
+      </li>
+
+      <li class="stop">
+        <span class="time">9:00</span>
+        <span class="name">ล่องแก่ง + ATV</span>
+        <div class="facts"><span class="cost">3,200 ฿ · คนละ 400</span></div>
+        <p class="note" style="margin-top:6px">เตรียมชุดที่เปียกได้ รองเท้ารัดส้น และชุดเปลี่ยน</p>
+        <p class="opts-label">ร้านที่เล็งไว้ 3 ร้าน (ปัดดูได้) อยู่ใกล้กันแถวสาริกา</p>
+        <div class="opts">
+          <div class="opt">
+            <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdOiXRRv-Nzkbw2iyZ-PBiQRF2q2AnmjuJGHfkK0sytcCJ1SzG1FKj2nRscbGW98KZgo09H7kRZ3Vu4-HgRegeuDiJE1dtmIjK2_VtsCffB-GoefQZy5ApZYZheSBcxskfXdo3ziw=s4800-w800-h600" alt="RATV นครนายก" loading="lazy">
+            <div class="b">
+              <a class="n" href="https://maps.google.com/?cid=15025217483564717493" target="_blank" rel="noopener">RATV นครนายก</a>
+              <p>★ 4.0 (434) · ส.–อา. 8:30–18:00</p>
+              <p><a href="tel:+66802788399">☎ 080 278 8399</a> · <a href="https://www.facebook.com/Ratvkhonyok" target="_blank" rel="noopener">Facebook</a></p>
+              <div class="cap">ภาพ: Google Maps · RATV</div>
+            </div>
+          </div>
+          <div class="opt">
+            <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfYzIMvlmeMyp8FCMOWDfbfKyIXzVcAH2XC-Mk7lSs8Lq5PJyHSKvtuPNiAGSVo-BK3IzXF3eWWirA7WQT0sBoLSoH4gCnH-wfRmDbfGvXwuJ87jlBtbNFpWuHU18nJnfH83LX1A1VBeU0=s4800-w800-h600" alt="ATV นครนายก" loading="lazy">
+            <div class="b">
+              <a class="n" href="https://maps.google.com/?cid=6712161124614241632" target="_blank" rel="noopener">ATV นครนายก</a>
+              <p>★ 4.1 (76) · ส.–อา. 8:30–17:30</p>
+              <p><a href="tel:+66805949978">☎ 080 594 9978</a> · <a href="https://www.facebook.com/ATVNakhonnayok" target="_blank" rel="noopener">Facebook</a></p>
+              <div class="cap">ภาพ: Google Maps · ATV นครนายก</div>
+            </div>
+          </div>
+          <div class="opt">
+            <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdNzcWCS7PYOQnGNHQEtq9JkVfR1bSGKzkDdTgsG9ZJhWB4axp5PLObw4XJqD1-vbQ8xIGLe3B5aQ8dQQoADkosOu7XTBitE93lAxQA3O8qL4K0wBXEu6P4Gtau5c-yfGPCPO5Wg2rXSpE=s4800-w800-h600" alt="ขุนด่าน แอดเวนเจอร์" loading="lazy">
+            <div class="b">
+              <a class="n" href="https://maps.google.com/?cid=9529414745766062564" target="_blank" rel="noopener">ขุนด่าน ล่องแก่งนครนายก</a>
+              <p>★ 4.8 (105) · ทุกวัน 8:00–17:00</p>
+              <p><a href="tel:+66889469955">☎ 088 946 9955</a></p>
+              <div class="cap">ภาพ: Google Maps · ขุนด่าน แอดเวนเจอร์</div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="stop minor">
+        <span class="time">12:30</span>
+        <span class="name">มื้อกลางวัน</span>
+        <div class="facts"><span class="cost">1,500 ฿</span></div>
+      </li>
+
+      <li class="stop">
+        <span class="time">13:30</span>
+        <a class="name" href="https://maps.google.com/?cid=3701430343860617722" target="_blank" rel="noopener">มีนาวิลล่า · Meena Villa<svg class="pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
+        <p class="note">เช็กอิน แล้วเล่นสวนน้ำได้ทั้งบ่าย อย่าลืมชุดว่ายน้ำ</p>
+        <div class="card">
+          <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfjLcwUJfdOnyH4j2f6a-K3TJZ1qGz4ZADmyUd5YsGrPQDtpFOyv2LBlKjjzvLq67V32JHtRPbvmrGAF-Uf81OZ5aP-JhfkZIRcmd02ZgjzLTZxqLu7OkLzadxyY_2zyrZVHxvwC9wOAbIx=s4800-w800-h600" alt="มีนาวิลล่า" loading="lazy">
+          <div class="cap">ภาพ: Google Maps · Meena Villa</div>
+        </div>
+      </li>
+
+      <li class="stop minor">
+        <span class="time none">เย็น</span>
+        <span class="name">มื้อเย็นที่ที่พัก</span>
+        <div class="facts"><span class="cost">2,000 ฿</span></div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= DAY 2 ================= -->
+  <section class="day" id="day2">
+    <div class="day-head">
+      <div class="day-num">2</div>
+      <div>
+        <h2>อาทิตย์ 22 พ.ย.</h2>
+        <p class="theme">สัตว์ป่า ข้าวอร่อย โบสถ์กลางทุ่งนา</p>
+      </div>
+    </div>
+    <a class="route-btn" href="https://maps.app.goo.gl/KcPAFjRGXBpSSER36" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-6-3V4l6 3 6-3 6 3v13l-6-3-6 3zM9 7v13M15 4v13"/></svg>
+      เปิดเส้นทางวันที่ 2 ใน Google Maps
+    </a>
+
+    <ol class="tl">
+      <li class="stop minor">
+        <span class="time">11:00</span>
+        <span class="name">เช็กเอาต์</span>
+      </li>
+
+      <li class="stop">
+        <span class="time">11:30</span>
+        <a class="name" href="https://maps.google.com/?cid=13423890178720768311" target="_blank" rel="noopener">ศูนย์ช่วยเหลือสัตว์ป่าที่ 1 นครนายก<svg class="pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
+        <p class="note">เข้าชมฟรี มีเสือ หมี ชะนี นาก ใกล้เขื่อนห้วยปรือ ถ้าอยากช่วย เอาผักผลไม้ไปบริจาคเป็นอาหารสัตว์ได้</p>
+        <div class="facts">
+          <span class="chip">เปิด 8:30–15:00</span>
+          <span class="chip">★ 4.7</span>
+        </div>
+        <div class="card">
+          <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLevAW51E5sTa5VwDuksAnTQalQTINYI8nYYCr5d_QhH6lYosF0g6e1lltpWzDXeX-rAk4vp8demiL5GgCJlP6_WA5UnqOYh32-C6yU_LaXIclXKIqRbNPeYXvjFMnAX3KFn0dd2=s4800-w800-h600" alt="ศูนย์ช่วยเหลือสัตว์ป่าที่ 1 นครนายก" loading="lazy">
+          <div class="cap">ภาพ: Google Maps · ศูนย์ช่วยเหลือสัตว์ป่าที่ 1</div>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="time">12:30</span>
+        <a class="name" href="https://maps.google.com/?cid=994447260585470306" target="_blank" rel="noopener">ครัวสองยาง<svg class="pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
+        <p class="note">อาหารไทยบ้าน ๆ รสดี ราคาไม่แรง</p>
+        <div class="facts">
+          <span class="cost">1,500 ฿</span>
+          <span class="chip">วันอาทิตย์เปิด 9:00–18:00</span>
+          <span class="chip">★ 4.9</span>
+          <a class="chip" href="tel:+66989559874">☎ 098 955 9874</a>
+        </div>
+        <div class="card">
+          <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdA1z3aZCtX69CreATgMJ2QBxOAMEBE3eapaMRn3nZcDCdqFLsklIzXi1TGsmceTLWoYOgvADh5O_3rjCrWTr-yMtTU6nW6TPWHvnmbA8--db8tmG74GGCTpHxUdhPiZYvB8kco2apgsjvl=s4800-w800-h600" alt="ครัวสองยาง" loading="lazy">
+          <div class="cap">ภาพ: Google Maps · ครัวสองยาง</div>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="time">13:30</span>
+        <a class="name" href="https://maps.google.com/?cid=5193418347677076751" target="_blank" rel="noopener">โบสถ์เก่าวัดป่ากระทุ่ม<svg class="pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
+        <p class="note">โบสถ์อายุกว่า 200 ปีกลางทุ่งนา มีรากไม้เกาะผนัง ช่วงน้ำมากอาจต้องเดินลุยหรือนั่งเรือเข้าไป</p>
+        <div class="facts">
+          <span class="chip">เปิด 6:00–18:00</span>
+          <span class="chip">★ 4.7</span>
+        </div>
+        <div class="card">
+          <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdKh80ArkPoMxCoONK7NawtLfvMXAxW2PEwHRhQy4dnxowl2zslOH486qFNu-ctuWk7B4Z1-6gnHKFlbNqTCc3AEhAmsbrpNDv6T2kDpYO1SYdg19L2OHwWiHCMIfg4V85ioQxP=s4800-w800-h600" alt="โบสถ์เก่าวัดป่ากระทุ่ม" loading="lazy">
+          <div class="cap">ภาพ: Google Maps · โบสถ์เก่าวัดป่ากระทุ่ม</div>
+        </div>
+      </li>
+
+      <li class="stop minor home">
+        <span class="time none">บ่าย</span>
+        <span class="name">กลับบ้าน</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="budget-sec">
+    <h2>สรุปค่าใช้จ่าย</h2>
+    <div class="room"><span>ที่พักมีนาวิลล่า<small>2 ห้อง + เตียงเสริม</small></span><span class="amt">9,260 ฿</span></div>
+    <div class="room"><span>ล่องแก่ง + ATV<small>คนละ 400</small></span><span class="amt">3,200 ฿</span></div>
+    <div class="room"><span>มื้อกลางวัน วันที่ 1</span><span class="amt">1,500 ฿</span></div>
+    <div class="room"><span>มื้อเย็นที่ที่พัก</span><span class="amt">2,000 ฿</span></div>
+    <div class="room"><span>ครัวสองยาง วันที่ 2</span><span class="amt">1,500 ฿</span></div>
+    <div class="room total"><span>รวม</span><span class="amt">17,460 ฿</span></div>
+    <div class="room"><span>หักมัดจำที่พักแล้ว</span><span class="amt">−4,630 ฿</span></div>
+    <div class="room total"><span>ยังต้องจ่ายระหว่างทริป</span><span class="amt" style="color:var(--brick)">12,830 ฿</span></div>
+  </section>
+
+</main>
+
+<footer>
+  ข้อมูลจากแผนทริปที่ส่งมา (Day 1–2) · รูปภาพ เวลาเปิด-ปิด และคะแนนจาก Google Maps ณ ต.ค. 2569 ควรเช็กอีกครั้งก่อนเดินทาง
+</footer>
+
+</body>
+</html>
